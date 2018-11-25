@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import Header from './js_components/header';
 import './App.scss';
+import LandingPage from './js_components/landingPage';
+import {Provider} from 'react-redux';
+import store from './store';
 
 class App extends Component {
-  componentDidMount(){
-    console.log('fetch');
-    
-     fetch('https://swapi.co/api/people').then((data)=>data.json()).then((data)=>console.log(data)
-     );
-  }
+  
   render() {
     return (
+      <Provider store={store}>
       <div className="App">
-        <Header />
+        <LandingPage/>
       </div>
+      </Provider>
     );
   }
 }

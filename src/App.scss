@@ -1,8 +1,10 @@
 @import './sass_components/variables';
-@import './sass_components/header.scss';
+@import './sass_components/landing-page.scss';
 
 body{
-  background: #000;
-  padding: 30px;
+  background: #000 url('./images/bcg.jpg');
+  margin:0;
+  padding:0;
+  height: 100vh;
 }
 
