@@ -1,0 +1,31 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+        color:$sw-color;
+        font-family: $sw-font;
+        font-weight: normal;
+        font-size: 24px;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .search-bar{
+        display: inline-block;
+       input{
+           width: 250px;
+           border: none;
+           height: 20px;
+           border-radius: 8px;
+           padding-left:40px;
+           background: #fff url('./images/icons/Search.svg') no-repeat 10px center;
+           background-size: 15px;
+           &::placeholder{
+               color:#4f4f4f;
+               font-size: 12px;
+               font-family: $sw-font;
+           }
+       }
+    }
+}

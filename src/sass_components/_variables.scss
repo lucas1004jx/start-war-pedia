@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'DeathStar';
+    src:  url('./fonts/DeathStar.woff') format('woff');     
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face{
+    font-family: "Benton Sans";
+    src: url('./fonts/bentonsans-medium-webfont.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face{
+    font-family: "Benton Sans";
+    src: url('./fonts/bentonsans-bold-webfont.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+$sw-font: 'DeathStar',sans-serif;
+$main-font:"Benton Sans",sans-serif;
+$sw-color:#F6DF20;
