@@ -25,8 +25,10 @@ const imgPath=`/images/${category}/`;
          <div className='carrusel'>
           {items.map((item,index)=>
             <div className='item' key={index}>
+            <figure>
             <img src={`${imgPath}${this.getIndex(item.url)}.jpg`}/>
-             <h3 className='name'>{item.name}</h3>
+            </figure>
+            <h2 className='name'>{item.name}</h2>
             </div>
             )}
          </div>

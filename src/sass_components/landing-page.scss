@@ -1,7 +1,15 @@
 
-@import './sass_components/header.scss';
-@import './sass_components/nav.scss';
+@import './header.scss';
+@import './nav.scss';
+@import './carrusel.scss';
 
 .landing-page{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     padding: 30px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 150px 1fr;
+    grid-template-areas: 'header' 'nav' 'carrusel';
 }

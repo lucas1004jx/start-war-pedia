@@ -2,7 +2,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100px;
+    grid-area: header;
+    
     h1{
         color:$sw-color;
         font-family: $sw-font;
