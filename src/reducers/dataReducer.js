@@ -51,7 +51,7 @@ export default (state=initialState,action)=>{
       return{
           ...state,
           people:{
-              data:action.payload,
+              data:[...state.people.data,action.payload],
               next:action.next,
               pre:action.rev,
               count:action.count

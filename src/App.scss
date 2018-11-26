@@ -1,6 +1,8 @@
 @import './sass_components/variables';
 @import './sass_components/mixins';
-@import './sass_components/main-page.scss';
+@import './sass_components/header.scss';
+@import './sass_components/nav.scss';
+@import './sass_components/carrusel.scss';
 
 body{
   background: #000 url('./images/bcg.jpg');
@@ -11,6 +13,20 @@ body{
 .App{
   width:100%;
   height: 100vh;
+  position: relative;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 150px 1fr;
+  grid-template-areas: 'header' 'nav' 'carrusel';
+    @include breakHeight(0,800px){
+        grid-template-rows: 50px 100px 1fr;
+    }
+    @include break(0,599px){
+      grid-template-rows: 80px  1fr;
+      grid-template-areas: 'header'  'carrusel';
+    }
 }
 

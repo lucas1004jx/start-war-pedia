@@ -3,6 +3,10 @@ header{
     justify-content: space-between;
     align-items: flex-start;
     grid-area: header;
+    @include break(0,599px){
+     flex-direction: column;
+     align-items: center;
+    }
     
     h1{
         color:$sw-color;
@@ -11,6 +15,9 @@ header{
         font-size: 24px;
         display: inline-block;
         margin: 0;
+        @include break(600px,999px){
+            font-size: 20px;
+        }
     }
 
     .search-bar{
@@ -23,6 +30,9 @@ header{
            padding-left:40px;
            background: #fff url('./images/Search.svg') no-repeat 10px center;
            background-size: 15px;
+           @include break(600px,999px){
+            width: 200px;
+           }
            &::placeholder{
                color:#4f4f4f;
                font-size: 12px;

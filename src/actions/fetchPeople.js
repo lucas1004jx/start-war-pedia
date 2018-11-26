@@ -1,11 +1,11 @@
 import {FETCH_PEOPLE} from './types';
 import axios from 'axios';
 
-const URL='https://swapi.co/api/people/';
+//const URL='https://swapi.co/api/people/';
 
-export const fetchPeople=()=>dispath=>{
+export const fetchPeople=(url)=>dispath=>{
     
-    axios.get(URL).then((res)=>res.data)
+    axios.get(url).then((res)=>res.data)
     .then((res)=> 
         dispath({
         type:FETCH_PEOPLE,

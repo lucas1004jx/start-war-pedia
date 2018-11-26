@@ -10,15 +10,16 @@ import {connect} from 'react-redux';
 
 let category='';
 let imgPath='';
-
- class Carrusel extends Component{
+let url='';
+ class DisplayContent extends Component{
      componentWillMount(){
-         console.log(this.props.name);
-         category=this.props.name;
+         console.log(this.props.content);
+         category=this.props.content;
          imgPath=`/images/${category}/`;
          switch(category){
             case 'people':
-            this.props.fetchPeople();
+            url='https://swapi.co/api/people/';
+            this.props.fetchPeople(url);
             break;
             case 'planets':
             this.props.fetchPlanets();
@@ -34,6 +35,9 @@ let imgPath='';
             break;
             case 'films':
             this.props.fetchFilms();
+            break;
+            default:
+            this.props.fetchPeople();
          }
          
      }
@@ -93,5 +97,5 @@ const mapSateToProps=state=>({
     data:state.sw_data
 })
 
-export default connect(mapSateToProps,{fetchPeople,fetchPlanets,fetchSpecies,fetchVehicles,fetchStarships,fetchFilms})(Carrusel)
+export default connect(mapSateToProps,{fetchPeople,fetchPlanets,fetchSpecies,fetchVehicles,fetchStarships,fetchFilms})(DisplayContent)
 

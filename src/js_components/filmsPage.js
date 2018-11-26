@@ -1,19 +1,12 @@
 import React,{Component} from 'react';
-import Header from './header';
-import Nav from './nav';
-import Carrusel from './carrusel';
+import DisplayContent from './displayContent';
 
 
 
- export default class PeoplePage extends Component{
-   
+ export default class FilmsPage extends Component{
     render(){
         return(
-            <div className='main-page'>
-            <Header/>
-            <Nav/>
-            <Carrusel name='films'/>
-            </div>
+            <DisplayContent name='films'/>
         )
     }
 }
