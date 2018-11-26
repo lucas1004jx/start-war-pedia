@@ -18,7 +18,12 @@
       font-family: $sw-font;
       font-size: 14px;
       text-align: center;
-    cursor: pointer;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      &:hover{
+        background-color: $sw-color;
+      }
     }
     .active{
         background-color: $sw-color;

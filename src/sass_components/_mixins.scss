@@ -1,0 +1,25 @@
+@mixin break($width...) {
+    @if length($width)==1 {
+        @media (min-width: nth($width, 1)) {
+            @content;
+        }
+    }
+    @if length($width)==2 {
+        @media (min-width: nth($width, 1)) and (max-width:nth($width, 2)) {
+            @content;
+        }
+    }
+}
+
+@mixin breakHeight($height...) {
+    @if length($height)==1 {
+        @media (min-height: nth($height, 1)) {
+            @content;
+        }
+    }
+    @if length($height)==2 {
+        @media (min-height: nth($height, 1)) and (max-height:nth($height, 2)) {
+            @content;
+        }
+    }
+}

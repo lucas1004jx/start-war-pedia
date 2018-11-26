@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import './App.scss';
-import LandingPage from './js_components/landingPage';
+import Routes from './routes';
 import {Provider} from 'react-redux';
 import store from './store';
 
 class App extends Component {
-  
   render() {
     return (
       <Provider store={store}>
       <div className="App">
-        <LandingPage/>
+        <Routes/>
       </div>
       </Provider>
     );

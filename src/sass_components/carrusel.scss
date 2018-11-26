@@ -7,19 +7,54 @@
     .item{
         display: inline-block;
         margin: 0 15px;
-        height: 80%;
+        width: 250px;
+        height: 343px;
         max-height: 550px;
+        position: relative;
+        
+        &:hover figure::before{
+            transform: translateY(0)
+         }
+        &:hover figure img{
+            transform: scale(1.1);
+        }
+        &:hover .basic-info{
+            transform: translateY(0);
+        }
+        .item-inner{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
         figure{
             margin:0;
             border:4px solid $sw-color;
             border-radius: 8px;
+            box-sizing: border-box;
             height:100%;
             overflow: hidden;
             cursor: pointer;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(0deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+                top:0;
+                left: 0;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+                z-index: 2;
+            }
+        
             img{
                 width: 100%;
                 height:100%;
                 object-fit: cover;
+                transition: transform 0.5s ease;
+                
             }
             
         }
@@ -31,5 +66,40 @@
             margin: 15px 0;
             font-weight: 500;
         }
+        .basic-info{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-left: 15px;
+            padding-bottom: 10px;
+            z-index: 3;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+            p{
+            color:$sw-color;
+            font-size: 12px;
+            margin: 5px 0;
+            font-family: $text-font;
+            font-weight: 500;
+            text-transform: capitalize;
+            }
+        }
     }
 }
+
+/* width */
+.carrusel::-webkit-scrollbar {
+    width: 1px;
+}
+
+/* Track */
+ .carrusel::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $sw-color; 
+    border-radius: 10px;
+} 
+ 
+/* Handle */
+.carrusel::-webkit-scrollbar-thumb {
+    background: $sw-color; 
+    border-radius: 10px;
+} 

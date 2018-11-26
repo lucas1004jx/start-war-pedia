@@ -1,11 +1,12 @@
 @import './sass_components/variables';
-@import './sass_components/landing-page.scss';
+@import './sass_components/mixins';
+@import './sass_components/main-page.scss';
 
 body{
   background: #000 url('./images/bcg.jpg');
   margin:0;
   padding:0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .App{
   width:100%;

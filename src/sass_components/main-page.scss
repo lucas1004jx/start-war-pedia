@@ -3,7 +3,7 @@
 @import './nav.scss';
 @import './carrusel.scss';
 
-.landing-page{
+.main-page{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -12,4 +12,8 @@
     grid-template-columns: 100%;
     grid-template-rows: 100px 150px 1fr;
     grid-template-areas: 'header' 'nav' 'carrusel';
+    @include breakHeight(0,800px){
+        grid-template-rows: 50px 100px 1fr;
+    }
 }
+
