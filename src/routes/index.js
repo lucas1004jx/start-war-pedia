@@ -1,13 +1,12 @@
 import React from 'react';
-import {BrowserRouter, Route,Switch} from 'react-router-dom';
+import {BrowserRouter, Route,Switch,Redirect} from 'react-router-dom';
 import {People,Planets ,Species ,Starships ,Vehicles ,Films } from './category';
-import Nav from '../js_components/nav';
+
 
 const Routes=()=>(
     <BrowserRouter>
     <Switch>
-    <Nav/>
-    <Route path="/" exact component={People}/>
+    <Redirect exact from="/" to="/people" component={People} />
     <Route path="/people" exact component={People}/>
     <Route path="/planets" exact component={Planets}/>
     <Route path="/starships" exact component={Starships}/>

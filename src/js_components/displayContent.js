@@ -61,17 +61,18 @@ let url='';
          if(this.props.data.next !== null){
          return(
             <React.Fragment>
-             <li>1</li>
+             <li className='page' onClick={()=>this.props.fetchPeople(this.props.data[category].prev)}>previous</li>
+             <li className='page' onClick={()=>this.props.fetchPeople(this.props.data[category].next)}>next</li>
            </React.Fragment>
              )  
          }
      }
      render(){
       
-     if(this.props.data[category].data.length<=0){return false}
-     console.log(this.props.data[category].data);
+     if(this.props.data[category].data.length <=0){return false}
+     console.log(this.props.data[category].prev);
      let items=this.props.data[category].data;
-    //  let items=[1,2,3,4,5,6,7,8,9,10];
+   
      return(
          <div className='carrusel'>
           {items.map((item,index)=>
@@ -88,6 +89,7 @@ let url='';
             <h2 className='name'>{item.name}</h2>
             </div>
             )}
+           { this.renderPagination()}
          </div>
      )
  }

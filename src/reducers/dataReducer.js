@@ -48,12 +48,13 @@ const initialState={
 export default (state=initialState,action)=>{
    switch(action.type){
       case FETCH_PEOPLE:
+      
       return{
           ...state,
           people:{
-              data:[...state.people.data,action.payload],
+              data:action.payload,
               next:action.next,
-              pre:action.rev,
+              prev:action.prev,
               count:action.count
             }
       }
