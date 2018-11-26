@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const URL='https://swapi.co/api/vehicles/';
 
-export const fetchData=()=>dispath=>{
+export const fetchVehicles=()=>dispath=>{
     axios.get(URL).then((res)=>res.data)
     .then((res)=> 
         dispath({

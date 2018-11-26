@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
 import {fetchPeople} from '../actions/fetchPeople';
 import {fetchPlanets} from '../actions/fetchPlanets';
+import {fetchSpecies} from '../actions/fetchSpecies';
+import {fetchVehicles} from '../actions/fetchVehicles';
+import {fetchStarships} from '../actions/fetchStarships';
+import {fetchFilms} from '../actions/fetchFilms';
 
 import {connect} from 'react-redux';
 
@@ -15,8 +19,21 @@ let imgPath='';
          switch(category){
             case 'people':
             this.props.fetchPeople();
+            break;
             case 'planets':
             this.props.fetchPlanets();
+            break;
+            case 'species':
+            this.props.fetchSpecies();
+            break;
+            case 'vehicles':
+            this.props.fetchVehicles();
+            break;
+            case 'starships':
+            this.props.fetchStarships();
+            break;
+            case 'films':
+            this.props.fetchFilms();
          }
          
      }
@@ -76,5 +93,5 @@ const mapSateToProps=state=>({
     data:state.sw_data
 })
 
-export default connect(mapSateToProps,{fetchPeople,fetchPlanets})(Carrusel)
+export default connect(mapSateToProps,{fetchPeople,fetchPlanets,fetchSpecies,fetchVehicles,fetchStarships,fetchFilms})(Carrusel)
 

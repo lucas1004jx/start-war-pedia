@@ -17,6 +17,30 @@ const initialState={
         next:'',
         prev:'',
         count:0
+    },
+    species:{
+        data:[],
+        next:'',
+        prev:'',
+        count:0
+    },
+    vehicles:{
+        data:[],
+        next:'',
+        prev:'',
+        count:0
+    },
+    starships:{
+        data:[],
+        next:'',
+        prev:'',
+        count:0
+    },
+    films:{
+        data:[],
+        next:'',
+        prev:'',
+        count:0
     }
     
 }
@@ -31,9 +55,7 @@ export default (state=initialState,action)=>{
               next:action.next,
               pre:action.rev,
               count:action.count
-            },
-          next:action.next,
-          prev:action.pre
+            }
       }
       case FETCH_PLANETS:
       return{
@@ -43,57 +65,47 @@ export default (state=initialState,action)=>{
               next:action.next,
               pre:action.rev,
               count:action.count
-            },
-          next:action.next,
-          prev:action.pre
+            }
       }
       case FETCH_SPECIES:
       return{
           ...state,
-          people:{
+          species:{
               data:action.payload,
               next:action.next,
               pre:action.rev,
               count:action.count
-            },
-          next:action.next,
-          prev:action.pre
+            }
       }
       case FETCH_STARSHIPS:
       return{
           ...state,
-          people:{
+          starships:{
               data:action.payload,
               next:action.next,
               pre:action.rev,
               count:action.count
-            },
-          next:action.next,
-          prev:action.pre
+            }
       }
       case FETCH_VEHICLES:
       return{
           ...state,
-          people:{
+          vehicles:{
               data:action.payload,
               next:action.next,
               pre:action.rev,
               count:action.count
-            },
-          next:action.next,
-          prev:action.pre
+            }
       }
       case FETCH_FILMS:
       return{
           ...state,
-          people:{
+          films:{
               data:action.payload,
               next:action.next,
               pre:action.rev,
               count:action.count
-            },
-          next:action.next,
-          prev:action.pre
+            }
       }
       default:
       return state;

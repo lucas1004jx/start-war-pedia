@@ -3,20 +3,18 @@ import Header from './header';
 import Nav from './nav';
 import Carrusel from './carrusel';
 
- export default class PlanetsPage extends Component{
+
+
+ export default class VehiclesPage extends Component{
    
     render(){
         return(
             <div className='main-page'>
             <Header/>
             <Nav/>
-            <Carrusel name='planets'/>
+            <Carrusel name='vehicles'/>
             </div>
         )
     }
 }
-
-const mapStateToProps=state=>({
-    data:state.sw_data
-})
 
