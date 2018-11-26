@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route,Switch} from 'react-router-dom';
-import PeoplePage from '../js_components/starshipsPage';
+import PeoplePage from '../js_components/peoplePage';
 import PlanetsPage from '../js_components/planetsPage';
 import SpeciesPage from '../js_components/speciesPage';
 import StarshipsPage from '../js_components/starshipsPage';
