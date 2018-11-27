@@ -85,9 +85,26 @@
             }
         }
     }
-    .page{
-        color:#fff;
+    .pagination{
+        @include flexCenter(row);
+        margin-top: 25px;
+        .page{
+            color:#000;
+            list-style: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-family: $text-font;
+            background-color: $sw-color;
+            display: inline-block;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            & ~ .page{
+                margin-left: 25px;
+            }
+        }
     }
+    
 }
 
 /* width */

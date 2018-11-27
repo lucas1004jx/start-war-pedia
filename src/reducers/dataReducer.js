@@ -64,7 +64,7 @@ export default (state=initialState,action)=>{
           planets:{
               data:action.payload,
               next:action.next,
-              pre:action.rev,
+              prev:action.prev,
               count:action.count
             }
       }
@@ -74,7 +74,7 @@ export default (state=initialState,action)=>{
           species:{
               data:action.payload,
               next:action.next,
-              pre:action.rev,
+              prev:action.prev,
               count:action.count
             }
       }
@@ -84,7 +84,7 @@ export default (state=initialState,action)=>{
           starships:{
               data:action.payload,
               next:action.next,
-              pre:action.rev,
+              prev:action.prev,
               count:action.count
             }
       }
@@ -94,7 +94,7 @@ export default (state=initialState,action)=>{
           vehicles:{
               data:action.payload,
               next:action.next,
-              pre:action.rev,
+              prev:action.prev,
               count:action.count
             }
       }
@@ -104,7 +104,7 @@ export default (state=initialState,action)=>{
           films:{
               data:action.payload,
               next:action.next,
-              pre:action.rev,
+              prev:action.prev,
               count:action.count
             }
       }

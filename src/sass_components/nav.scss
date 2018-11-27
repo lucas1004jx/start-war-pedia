@@ -8,6 +8,7 @@
     box-sizing: border-box;
     padding: 0;
     grid-area: nav;
+    z-index: 3;
     @include break(600px,999px){
       flex-wrap: wrap;
       justify-content: space-between;

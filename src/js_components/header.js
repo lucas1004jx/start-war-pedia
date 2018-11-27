@@ -1,14 +1,9 @@
 import React,{Component} from 'react';
+import {openMenu} from '../actions/openMenu';
+import {closeMenu} from '../actions/closeMenu';
+import {connect} from 'react-redux';
 
-export default class Header extends Component{
-    constructor(){
-        super();
-        this.openMenu=this.openMenu.bind(this);
-    }
-    openMenu(){
-      document.querySelector('.nav').classList.toggle('open');
-      document.querySelector('.menu-icon').classList.toggle('open');
-    }
+class Header extends Component{
     render(){
         return(
             <header>
@@ -16,12 +11,18 @@ export default class Header extends Component{
              <form className='search-bar'>
                  <input placeholder='search'/>
              </form>
-             <div className='menu-icon' onClick={this.openMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-            </div>
+             <div className={`menu-icon ${this.props.menuState}`} onClick={this.props.menuState==='open'?this.props.closeMenu:this.props.openMenu}>
+               <span></span>
+               <span></span>
+               <span></span>
+               </div>
             </header>
         )
     }
 }
+
+const mapStatetoProps=state=>({
+    menuState:state.menuState.menu
+})
+
+export default connect(mapStatetoProps,{openMenu,closeMenu})(Header);

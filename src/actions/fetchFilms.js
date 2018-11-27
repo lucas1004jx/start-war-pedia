@@ -1,10 +1,10 @@
 import {FETCH_FILMS} from './types';
 import axios from 'axios';
 
-const URL='https://swapi.co/api/films/';
+//const URL='https://swapi.co/api/films/';
 
-export const fetchFilms=()=>dispath=>{
-    axios.get(URL).then((res)=>res.data)
+export const fetchFilms=(url)=>dispath=>{
+    axios.get(url).then((res)=>res.data)
     .then((res)=> 
         dispath({
         type:FETCH_FILMS,

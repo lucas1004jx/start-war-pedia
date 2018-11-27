@@ -22,22 +22,28 @@ let url='';
             this.props.fetchPeople(url);
             break;
             case 'planets':
-            this.props.fetchPlanets();
+            url='https://swapi.co/api/planets/';
+            this.props.fetchPlanets(url);
             break;
             case 'species':
-            this.props.fetchSpecies();
+            url='https://swapi.co/api/species/';
+            this.props.fetchSpecies(url);
             break;
             case 'vehicles':
-            this.props.fetchVehicles();
+            url='https://swapi.co/api/vehicles/';
+            this.props.fetchVehicles(url);
             break;
             case 'starships':
-            this.props.fetchStarships();
+            url='https://swapi.co/api/starships/';
+            this.props.fetchStarships(url);
             break;
             case 'films':
-            this.props.fetchFilms();
+            url='https://swapi.co/api/films/';
+            this.props.fetchFilms(url);
             break;
             default:
-            this.props.fetchPeople();
+            url='https://swapi.co/api/people/';
+            this.props.fetchPeople(url);
          }
          
      }
@@ -51,26 +57,62 @@ let url='';
               <p>height: <span className='height'>{item.height}</span>cm</p>
               <p>mass: <span className='mass'>{item.mass}</span>kg</p>
               <p>gender: <span className='gender'>{item.gender}</span></p>
-              <p>specie: <span className='specie'>{item.species}</span></p>
+              <p>specie: <span className='specie'>{item.birth_year}</span></p>
             </React.Fragment> 
            )
          }
      }
     
      renderPagination(){
-         if(this.props.data.next !== null){
+         if(category==='people'){ 
          return(
-            <React.Fragment>
-             <li className='page' onClick={()=>this.props.fetchPeople(this.props.data[category].prev)}>previous</li>
-             <li className='page' onClick={()=>this.props.fetchPeople(this.props.data[category].next)}>next</li>
-           </React.Fragment>
+            <div className='pagination'>
+              {this.props.data[category].prev !==null ? <li className='page' onClick={()=>this.props.fetchPeople(this.props.data[category].prev)}>previous</li>:null}
+             {this.props.data[category].next !==null ? <li className='page' onClick={()=>this.props.fetchPeople(this.props.data[category].next)}>next</li>:null}
+           </div>
              )  
-         }
+         }else if(category==='planets'){
+            return(
+               <div className='pagination'>
+                {this.props.data[category].prev !==null ? <li className='page' onClick={()=>this.props.fetchPlanets(this.props.data[category].prev)}>previous</li>:null}
+             {this.props.data[category].next !==null ? <li className='page' onClick={()=>this.props.fetchPlanets(this.props.data[category].next)}>next</li>:null}
+              </div >
+                )  
+            }else if(category==='species'){
+                return(
+                   <div className='pagination'>
+                    {this.props.data[category].prev !==null ? <li className='page' onClick={()=>this.props.fetchSpecies(this.props.data[category].prev)}>previous</li>:null}
+                 {this.props.data[category].next !==null ? <li className='page' onClick={()=>this.props.fetchSpecies(this.props.data[category].next)}>next</li>:null}
+                  </div>
+                    )  
+                }else if(category==='vehicles'){
+                    return(
+                       <div className='pagination'>
+                        {this.props.data[category].prev !==null ? <li className='page' onClick={()=>this.props.fetchVehicles(this.props.data[category].prev)}>previous</li>:null}
+                     {this.props.data[category].next !==null ? <li className='page' onClick={()=>this.props.fetchVehicles(this.props.data[category].next)}>next</li>:null}
+                      </div>
+                        )  
+                    }else if(category==='starships'){
+                        return(
+                           <div className='pagination'>
+                            {this.props.data[category].prev !==null ? <li className='page' onClick={()=>this.props.fetchStarships(this.props.data[category].prev)}>previous</li>:null}
+                         {this.props.data[category].next !==null ? <li className='page' onClick={()=>this.props.fetchStarships(this.props.data[category].next)}>next</li>:null}
+                          </div >
+                            )  
+                        }else if(category==='films'){
+                            return(
+                               <div className='pagination'>
+                                {this.props.data[category].prev !==null ? <li className='page' onClick={()=>this.props.fetchFilms(this.props.data[category].prev)}>previous</li>:null}
+                             {this.props.data[category].next !==null ? <li className='page' onClick={()=>this.props.fetchFilms(this.props.data[category].next)}>next</li>:null}
+                              </div >
+                                )  
+                            }
      }
+
      render(){
       
      if(this.props.data[category].data.length <=0){return false}
-     console.log(this.props.data[category].prev);
+     //console.log(this.props.data[category]);
      let items=this.props.data[category].data;
    
      return(

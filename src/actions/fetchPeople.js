@@ -11,7 +11,8 @@ export const fetchPeople=(url)=>dispath=>{
         type:FETCH_PEOPLE,
         payload:res.results,
         next:res.next,
-        prev:res.previous
+        prev:res.previous,
+        count:res.count
     }))
 
 }
