@@ -5,8 +5,8 @@ import {fetchSpecies} from '../actions/fetchSpecies';
 import {fetchVehicles} from '../actions/fetchVehicles';
 import {fetchStarships} from '../actions/fetchStarships';
 import {fetchFilms} from '../actions/fetchFilms';
-import {PeopleInfo,PlanetsInfo,SpeciesInfo,StarshipsInfo,FilmsInfo,VehiclesInfo} from './info';
-import Preloader from './preloader';
+import {PeopleInfo,PlanetsInfo,SpeciesInfo,StarshipsInfo,FilmsInfo,VehiclesInfo} from './ui_components/info';
+import Preloader from './ui_components/preloader';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
