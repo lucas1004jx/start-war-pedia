@@ -4,6 +4,7 @@ import {FETCH_SPECIES} from '../actions/types';
 import {FETCH_STARSHIPS} from '../actions/types';
 import {FETCH_VEHICLES} from '../actions/types';
 import {FETCH_FILMS} from '../actions/types';
+import {FETCH_DATA} from '../actions/types';
 
 const initialState={
     people:{
@@ -41,7 +42,8 @@ const initialState={
         next:'',
         prev:'',
         count:0
-    }
+    },
+    detail:{}
     
 }
 
@@ -107,6 +109,11 @@ export default (state=initialState,action)=>{
               prev:action.prev,
               count:action.count
             }
+      }
+      case FETCH_DATA:
+      return{
+          ...state,
+          detail:action.payload,
       }
       default:
       return state;

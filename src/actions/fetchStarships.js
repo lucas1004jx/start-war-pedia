@@ -11,7 +11,8 @@ export const fetchStarships=(url)=>dispath=>{
         payload:res.results,
         next:res.next,
         prev:res.previous,
-        count:res.count
+        count:res.count,
+        url:res.url
     }))
 
 }

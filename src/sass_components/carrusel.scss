@@ -26,6 +26,7 @@
             height: 100%;
             overflow: hidden;
             position: relative;
+            display:inline-block;
         }
         figure{
             margin:0;
@@ -71,6 +72,7 @@
             bottom: 0;
             left: 0;
             padding-left: 15px;
+            padding-right: 15px;
             padding-bottom: 10px;
             z-index: 3;
             transform: translateY(100%);
@@ -82,12 +84,23 @@
             font-family: $text-font;
             font-weight: 500;
             text-transform: capitalize;
+            white-space: normal;
+            display: none;
+            &:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5){
+                display: block;
+            }
+            span{
+                color:#fff;
+            }
             }
         }
     }
     .pagination{
         @include flexCenter(row);
         margin-top: 25px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
         .page{
             color:#000;
             list-style: none;

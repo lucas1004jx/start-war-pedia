@@ -5,7 +5,8 @@ import {fetchSpecies} from '../actions/fetchSpecies';
 import {fetchVehicles} from '../actions/fetchVehicles';
 import {fetchStarships} from '../actions/fetchStarships';
 import {fetchFilms} from '../actions/fetchFilms';
-
+import {PeopleInfo,PlanetsInfo,SpeciesInfo,StarshipsInfo,FilmsInfo,VehiclesInfo} from './info';
+import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 let category='';
@@ -53,14 +54,29 @@ let url='';
      renderBasicInfo(item){
          if(category==='people'){
            return(
-            <React.Fragment>
-              <p>height: <span className='height'>{item.height}</span>cm</p>
-              <p>mass: <span className='mass'>{item.mass}</span>kg</p>
-              <p>gender: <span className='gender'>{item.gender}</span></p>
-              <p>specie: <span className='specie'>{item.birth_year}</span></p>
-            </React.Fragment> 
+            <PeopleInfo info={item}/>
            )
-         }
+         }else if(category==='planets'){
+            return(
+              <PlanetsInfo info={item}/>
+            )
+          }else if(category==='films'){
+            return(
+              <FilmsInfo info={item}/>
+            )
+          }else if(category==='species'){
+            return(
+              <SpeciesInfo info={item}/>
+            )
+          }else if(category==='vehicles'){
+            return(
+              <VehiclesInfo info={item}/>
+            )
+          }else if(category==='starships'){
+            return(
+              <StarshipsInfo info={item}/>
+            )
+          }
      }
     
      renderPagination(){
@@ -119,7 +135,7 @@ let url='';
          <div className='carrusel'>
           {items.map((item,index)=>
             <div className='item' key={index}>
-            <div className='item-inner'>
+            <NavLink className='item-inner' to={`/${category}/${this.getId(item.url)}`}>
             <figure>
             <img src={`${imgPath}${this.getId(item.url)}.jpg`} alt={item.name}/>
             {/* <img src={`/images/people/${index+1}.jpg`}/> */}
@@ -127,8 +143,8 @@ let url='';
             <div className='basic-info'>
             {this.renderBasicInfo(item)}
             </div>
-            </div>
-            <h2 className='name'>{item.name}</h2>
+            </NavLink>
+            <h2 className='name'>{item.name?item.name:item.title}</h2>
             </div>
             )}
            { this.renderPagination()}
