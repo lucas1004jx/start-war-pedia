@@ -23,3 +23,10 @@
         }
     }
 }
+
+@mixin flexCenter($dir) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+}

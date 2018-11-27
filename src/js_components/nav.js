@@ -8,8 +8,9 @@ const navItems=['people','species','planets','vehicles','starships','films'];
     render(){
         return(
             <nav className='nav'>
+            
              {navItems.map((nav,index)=>(
-                 <NavLink className='nav-button'  activeClassName="active" onClick={this.props.selectCategory} to={`/${nav}`} key={nav}>{nav}</NavLink>
+                 <NavLink className='nav-button'  activeClassName="active" to={`/${nav}`} key={nav}>{nav}</NavLink>
              ))}
             </nav>
         )
