@@ -3,7 +3,7 @@
     box-sizing: border-box;
     white-space: nowrap;
     overflow-x: scroll;
-    
+    position: relative;
     .item{
         display: inline-block;
         margin: 0 15px;

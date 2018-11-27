@@ -6,6 +6,7 @@ import {fetchVehicles} from '../actions/fetchVehicles';
 import {fetchStarships} from '../actions/fetchStarships';
 import {fetchFilms} from '../actions/fetchFilms';
 import {PeopleInfo,PlanetsInfo,SpeciesInfo,StarshipsInfo,FilmsInfo,VehiclesInfo} from './info';
+import Preloader from './preloader';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
@@ -127,7 +128,7 @@ let url='';
 
      render(){
       
-     if(this.props.data[category].data.length <=0){return false}
+     if(this.props.data[category].data.length <=0){return <div className='carrusel'><Preloader/></div>}
      //console.log(this.props.data[category]);
      let items=this.props.data[category].data;
    

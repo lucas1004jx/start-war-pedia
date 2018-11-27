@@ -4,6 +4,7 @@
     grid-template-rows: 60% 40%;
     grid-template-columns: 1fr;
     grid-template-areas: 'info' 'related';
+    position: relative;
   .info{
       grid-area: info;
       display: grid;

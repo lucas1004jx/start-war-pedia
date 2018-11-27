@@ -1,13 +1,16 @@
 import React,{Component} from 'react';
 import {openMenu} from '../actions/openMenu';
 import {closeMenu} from '../actions/closeMenu';
+import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class Header extends Component{
     render(){
         return(
             <header>
+                <NavLink to='/'>
              <h1>star war pedia</h1>
+             </NavLink>
              <form className='search-bar'>
                  <input placeholder='search'/>
              </form>

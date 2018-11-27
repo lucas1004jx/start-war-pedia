@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {PeopleInfo} from './info';
+import Preloader from './preloader';
 import {fetchData} from '../actions/fetchData';
 import {connect} from 'react-redux';
 
@@ -14,7 +15,7 @@ let  imgPath='';
         let detail=this.props.detail;
         console.log(this.props.match.params.id);
         
-        if(Object.values(detail)[0]===undefined){return <div></div>}
+        if(Object.values(detail)[0]===undefined){return <div className='detail-page'><Preloader/></div>}
         console.log(detail); 
         return(
             <div className='detail-page'>
