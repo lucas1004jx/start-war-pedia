@@ -1,10 +1,4 @@
-import {FETCH_PEOPLE} from '../actions/types';
-import {FETCH_PLANETS} from '../actions/types';
-import {FETCH_SPECIES} from '../actions/types';
-import {FETCH_STARSHIPS} from '../actions/types';
-import {FETCH_VEHICLES} from '../actions/types';
-import {FETCH_FILMS} from '../actions/types';
-import {FETCH_DATA} from '../actions/types';
+import {FETCH_PEOPLE,FETCH_PLANETS,FETCH_SPECIES,FETCH_STARSHIPS,FETCH_VEHICLES,FETCH_FILMS,FETCH_DATA} from '../actions/types';
 
 const initialState={
     people:{

@@ -1,7 +1,7 @@
 import {OPEN_MENU, CLOSE_MENU} from '../actions/types';
 
 const initialState={
-    menu:'false'
+    menu:'close'
 }
 
 export default (state=initialState,action)=>{

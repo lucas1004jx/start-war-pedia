@@ -29,8 +29,9 @@ body{
         grid-template-rows: 50px 100px 1fr;
     }
     @include break(0,599px){
-      grid-template-rows: 80px  1fr;
+      grid-template-rows: 100px  1fr;
       grid-template-areas: 'header'  'carrusel';
+      padding: 10px;
     }
 }
 
