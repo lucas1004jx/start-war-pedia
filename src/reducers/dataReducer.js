@@ -1,4 +1,5 @@
-import {FETCH_PEOPLE,FETCH_PLANETS,FETCH_SPECIES,FETCH_STARSHIPS,FETCH_VEHICLES,FETCH_FILMS,FETCH_DATA} from '../actions/types';
+import {FETCH_PEOPLE,FETCH_PLANETS,FETCH_SPECIES,FETCH_STARSHIPS,FETCH_VEHICLES,FETCH_FILMS,FETCH_DATA,GET_FILM_NAME} from '../actions/types';
+
 
 const initialState={
     people:{
@@ -37,7 +38,7 @@ const initialState={
         prev:'',
         count:0
     },
-    detail:{}
+    detail:{data:{},films:[]}
     
 }
 
@@ -52,7 +53,8 @@ export default (state=initialState,action)=>{
               next:action.next,
               prev:action.prev,
               count:action.count
-            }
+            },
+            detail:{data:{},films:[]}
       }
       case FETCH_PLANETS:
       return{
@@ -107,7 +109,18 @@ export default (state=initialState,action)=>{
       case FETCH_DATA:
       return{
           ...state,
-          detail:action.payload,
+          detail:{
+              data:action.payload,
+              films:[...state.detail.films]
+          }
+      }
+      case GET_FILM_NAME:
+      return{
+          ...state,
+          detail:{
+             data: {...state.detail.data},
+             films:[...state.detail.films,action.payload]
+          }
       }
       default:
       return state;

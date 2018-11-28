@@ -2,10 +2,10 @@ import {FETCH_DATA} from './types';
 import axios from 'axios';
 
 
-export const fetchData=(url)=>dispath=>{
+export const fetchData=(url)=>dispatch=>{
     axios.get(url).then((res)=>res.data)
     .then((res)=> 
-        dispath({
+        dispatch({
         type:FETCH_DATA,
         payload:res
     }))

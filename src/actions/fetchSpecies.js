@@ -3,10 +3,10 @@ import axios from 'axios';
 
 //const URL='https://swapi.co/api/species/';
 
-export const fetchSpecies=(url)=>dispath=>{
+export const fetchSpecies=(url)=>dispatch=>{
     axios.get(url).then((res)=>res.data)
     .then((res)=> 
-        dispath({
+        dispatch({
         type:FETCH_SPECIES,
         payload:res.results,
         next:res.next,

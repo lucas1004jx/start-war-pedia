@@ -7,15 +7,15 @@ const Button=({name,className})=>(
 )
 const Style={
     'color':'#000',
-    'list-style': 'none',
-    'text-transform': 'uppercase',
-    'font-size': '12px',
-    'font-family': 'DeathStar,sans-serif',
-    'background-color': '#F6DF20',
+    'listStyle': 'none',
+    'textTransform': 'uppercase',
+    'fontSize': '12px',
+    'fontFamily': 'DeathStar,sans-serif',
+    'backgroundColor': '#F6DF20',
     'display': 'inline-block',
     'padding': '5px 10px',
     'cursor': 'pointer',
-    'border-radius': '8px',
+    'borderRadius': '8px',
     'border':'none'
 }
 

@@ -3,10 +3,10 @@ import axios from 'axios';
 
 //const URL='https://swapi.co/api/starships/';
 
-export const fetchStarships=(url)=>dispath=>{
+export const fetchStarships=(url)=>dispatch=>{
     axios.get(url).then((res)=>res.data)
     .then((res)=> 
-        dispath({
+        dispatch({
         type:FETCH_STARSHIPS,
         payload:res.results,
         next:res.next,

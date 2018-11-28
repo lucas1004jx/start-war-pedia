@@ -131,6 +131,7 @@ let url='';
      if(this.props.data[category].data.length <=0){return <div className='carrusel'><Preloader/></div>}
      //console.log(this.props.data[category]);
      let items=this.props.data[category].data;
+   //console.log(items);
    
      return(
          <div className='carrusel'>

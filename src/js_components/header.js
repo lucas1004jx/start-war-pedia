@@ -12,7 +12,7 @@ class Header extends Component{
                 <NavLink to='/'>
              <h1>star war pedia</h1>
              </NavLink>
-             <Button name='browsing history' className='history-button'/>
+             <Button name='history' className='history-button'/>
              <form className='search-bar'>
                  <input placeholder='search'/>
              </form>
