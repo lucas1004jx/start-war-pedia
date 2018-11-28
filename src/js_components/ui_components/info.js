@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PeopleInfo=({info})=>(
+export const PeopleInfo=({info,homeworld,specie})=>(
     <React.Fragment>
               <p>name: <span >{info.name}</span></p>
               <p>height: <span >{info.height}cm</span></p>
@@ -9,8 +9,8 @@ export const PeopleInfo=({info})=>(
               <p>birthday: <span>{info.birth_year}</span></p>
               <p>hair color: <span>{info.hair_color}</span></p>
               <p>skin color: <span>{info.skin_color}</span></p>
-              <p>specie: <span>{info.species}</span></p>
-              <p>homeworld: <span >{info.homeworld}</span></p>
+              <p>specie: <span>{specie}</span></p>
+              <p>homeworld: <span >{homeworld}</span></p>
             </React.Fragment> 
 )
 
@@ -33,6 +33,7 @@ export const FilmsInfo=({info})=>(
   <p>director: <span >{info.director}</span></p>
   <p>producer: <span >{info.producer}</span></p>
   <p>data: <span>{info.release_date}</span></p>
+  <p>opening: <span>{info.opening_crawl}</span></p>
 </React.Fragment> 
 )
 

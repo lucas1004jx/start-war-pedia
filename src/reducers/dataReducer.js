@@ -1,4 +1,4 @@
-import {FETCH_PEOPLE,FETCH_PLANETS,FETCH_SPECIES,FETCH_STARSHIPS,FETCH_VEHICLES,FETCH_FILMS,FETCH_DATA,GET_FILM_NAME} from '../actions/types';
+import {FETCH_PEOPLE,FETCH_PLANETS,FETCH_SPECIES,FETCH_STARSHIPS,FETCH_VEHICLES,FETCH_FILMS,FETCH_DATA,GET_FILM_NAME,GET_VEHICLE_NAME,GET_STARSHIP_NAME,GET_PEOPLE_NAME,GET_SPECIE_NAME,GET_PLANET_NAME} from '../actions/types';
 
 
 const initialState={
@@ -38,7 +38,7 @@ const initialState={
         prev:'',
         count:0
     },
-    detail:{data:{},films:[]}
+    detail:{data:{},films:[],vehicles:[],planets:[],starships:[],people:[],species:[]}
     
 }
 
@@ -54,7 +54,7 @@ export default (state=initialState,action)=>{
               prev:action.prev,
               count:action.count
             },
-            detail:{data:{},films:[]}
+            detail:{data:{},films:[],vehicles:[],planets:[],starships:[],people:[],species:[]}
       }
       case FETCH_PLANETS:
       return{
@@ -110,16 +110,56 @@ export default (state=initialState,action)=>{
       return{
           ...state,
           detail:{
-              data:action.payload,
-              films:[...state.detail.films]
+              ...state.detail,
+              data:action.payload
           }
       }
       case GET_FILM_NAME:
       return{
           ...state,
           detail:{
-             data: {...state.detail.data},
+            ...state.detail,
              films:[...state.detail.films,action.payload]
+          }
+      }
+      case GET_VEHICLE_NAME:
+      return{
+          ...state,
+          detail:{
+            ...state.detail,
+             vehicles:[...state.detail.vehicles,action.payload]
+          }
+      }
+      case GET_STARSHIP_NAME:
+      return{
+          ...state,
+          detail:{
+            ...state.detail,
+             starships:[...state.detail.starships,action.payload]
+          }
+      }
+      case GET_SPECIE_NAME:
+      return{
+          ...state,
+          detail:{
+            ...state.detail,
+             species:[...state.detail.species,action.payload]
+          }
+      }
+      case GET_PLANET_NAME:
+      return{
+          ...state,
+          detail:{
+            ...state.detail,
+             planets:[...state.detail.planets,action.payload]
+          }
+      }
+      case GET_PEOPLE_NAME:
+      return{
+          ...state,
+          detail:{
+            ...state.detail,
+             people:[...state.detail.people,action.payload]
           }
       }
       default:

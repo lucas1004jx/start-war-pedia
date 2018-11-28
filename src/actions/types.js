@@ -8,4 +8,9 @@ export const FETCH_DATA='FETCH_DATA';
 export const OPEN_MENU='OPEN_MENU';
 export const CLOSE_MENU='CLSOE_MENU';
 export const GET_FILM_NAME='GET_FILM_NAME';
+export const GET_STARSHIP_NAME='GET_STARSHIP_NAME';
+export const GET_SPECIE_NAME='GET_SPECIE_NAME';
+export const GET_VEHICLE_NAME='GET_VEHICLE_NAME';
+export const GET_PLANET_NAME='GET_PLANET_NAME';
+export const GET_PEOPLE_NAME='GET_PEOPLE_NAME';
 
