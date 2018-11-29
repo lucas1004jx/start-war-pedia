@@ -37,13 +37,15 @@ export const FilmsInfo=({info})=>(
 </React.Fragment> 
 )
 
-export const SpeciesInfo=({info})=>(
+export const SpeciesInfo=({info,homeworld})=>(
   <React.Fragment>
     <p>name: <span >{info.name}</span></p>
   <p>classification: <span>{info.infoclassification}</span></p>
   <p>average height: <span >{info.average_height}</span></p>
   <p>average life: <span >{info.average_lifespan}</span></p>
   <p>language: <span>{info.language}</span></p>
+  <p>designation: <span>{info.designation}</span></p>
+  <p>homeworld: <span >{homeworld}</span></p>
 </React.Fragment> 
 )
 
@@ -54,6 +56,9 @@ export const VehiclesInfo=({info})=>(
     <p>cost: <span >{info.cost_in_credits}</span></p>
     <p>crew: <span >{info.crew}</span></p>
     <p>passengers: <span>{info.passengers}</span></p>
+    <p>cargo capacity: <span>{info.cargo_capacity}</span></p>
+    <p>vehicle class: <span>{info.vehicle_class}</span></p>
+    
   </React.Fragment> 
 )
 
@@ -64,5 +69,7 @@ export const StarshipsInfo=({info})=>(
     <p>cost: <span >{info.cost_in_credits}</span></p>
     <p>crew: <span >{info.crew}</span></p>
     <p>passengers: <span>{info.passengers}</span></p>
+    <p>consumables: <span>{info.consumables}</span></p>
+    <p>starship class: <span>{info.starship_class}</span></p>
   </React.Fragment>
 )
